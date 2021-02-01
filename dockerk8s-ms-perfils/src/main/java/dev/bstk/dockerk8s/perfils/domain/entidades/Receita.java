@@ -1,4 +1,4 @@
-package dev.bstk.dockerk8s.perfils.domain;
+package dev.bstk.dockerk8s.perfils.domain.entidades;
 
 
 import lombok.Builder;

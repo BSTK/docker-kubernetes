@@ -1,10 +1,11 @@
-package dev.bstk.dockerk8s.perfils.domain.repository;
+package dev.bstk.dockerk8s.perfils.domain;
 
-import dev.bstk.dockerk8s.perfils.domain.Receita;
-import dev.bstk.dockerk8s.perfils.domain.Usuario;
+import dev.bstk.dockerk8s.perfils.domain.entidades.Receita;
+import dev.bstk.dockerk8s.perfils.domain.entidades.Usuario;
 import org.springframework.stereotype.Repository;
 
 import java.time.LocalDate;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 import java.util.UUID;
@@ -83,7 +84,11 @@ public class UsuarioRepository {
             .build()
     );
 
-    public static Map<UUID, Usuario> baseDados() {
-        return DADOS;
+    public List<Usuario> usuarios() {
+        return new ArrayList<>(DADOS.values());
+    }
+
+    public Usuario usuario(final UUID uuid) {
+        return DADOS.get(uuid);
     }
 }

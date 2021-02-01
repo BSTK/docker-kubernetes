@@ -1,6 +1,5 @@
-package dev.bstk.dockerk8s.perfils.domain;
+package dev.bstk.dockerk8s.perfils.domain.entidades;
 
-import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 
@@ -12,21 +11,20 @@ import java.util.UUID;
 
 @Data
 @Builder
-@AllArgsConstructor
 public class Usuario implements Serializable {
 
     @NotNull
-    private final UUID id;
+    private UUID id;
 
     @NotNull @NotEmpty
-    private final String nome;
+    private String nome;
 
     @NotNull @NotEmpty
-    private final String email;
+    private String email;
 
     @NotNull @NotEmpty
-    private final String biografia;
+    private String biografia;
 
     @NotNull @NotEmpty
-    private final List<Receita> ultimasReceitas;
+    private List<Receita> ultimasReceitas;
 }

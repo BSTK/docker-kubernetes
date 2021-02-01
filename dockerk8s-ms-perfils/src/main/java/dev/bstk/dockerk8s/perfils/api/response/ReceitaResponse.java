@@ -1,6 +1,5 @@
 package dev.bstk.dockerk8s.perfils.api.response;
 
-import lombok.AllArgsConstructor;
 import lombok.Data;
 
 import javax.validation.constraints.NotEmpty;
@@ -11,18 +10,17 @@ import java.util.List;
 import java.util.UUID;
 
 @Data
-@AllArgsConstructor
 public class ReceitaResponse implements Serializable {
 
     @NotNull
-    private final UUID id;
+    private UUID id;
 
     @NotNull @NotEmpty
-    private final String nome;
+    private String nome;
 
     @NotNull
-    private final LocalDate dataCriacao;
+    private LocalDate dataCriacao;
 
     @NotNull @NotEmpty
-    private final List<String> ingredientes;
+    private List<String> ingredientes;
 }
