@@ -28,7 +28,7 @@ public class TimelineResource {
     public ResponseEntity<List<TimelineResponse>> usuarios() {
         final var timelines = repository.timelines();
         final var timelinesResponse = timelines.stream()
-            .map(receita -> mapper.map(timelines, TimelineResponse.class))
+            .map(timeline -> mapper.map(timeline, TimelineResponse.class))
             .collect(Collectors.toList());
 
         return ResponseEntity.ok(timelinesResponse);
