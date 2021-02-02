@@ -102,6 +102,7 @@
                     </images>
                 </configuration>
             </plugin>
+
         </plugins>
     </build>
 
