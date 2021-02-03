@@ -12,7 +12,5 @@ Docker & Kubernetes para desenvolvedores Java
 - 
 
 
-
-
 ### Comandos Kubernetes
 > Instalando o Kubernetes (mini-kube)
