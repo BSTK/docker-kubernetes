@@ -1,0 +1,31 @@
+apiVersion: apps/v1
+kind: Deployment
+
+metadata:
+  name: ms-timeline
+
+spec:
+  selector:
+    matchLabels:
+      app: ms-timeline
+      tier: backend
+
+  template:
+    metadata:
+      labels:
+        app: ms-timeline
+        tier: backend
+    spec:
+      containers:
+        - name: ms-timeline
+          image: bstk/ms-timeline:latest
+          imagePullPolicy: IfNotPresent
+          resources:
+            requests:
+              cpu: 100m
+              memory: 100Mi
+          env:
+            - name: GET_HOST_FROM
+              value: dns
+          ports:
+            - containerPort: 8080
