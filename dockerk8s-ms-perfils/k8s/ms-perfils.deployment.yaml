@@ -1,0 +1,31 @@
+apiVersion: apps/v1
+kind: Deployment
+
+metadata:
+  name: ms-perfils
+
+spec:
+  selector:
+    matchLabels:
+      app: ms-perfils
+      tier: backend
+
+  template:
+    metadata:
+      labels:
+        app: ms-perfils
+        tier: backend
+    spec:
+      containers:
+        - name: ms-perfils
+          image: bstk/ms-perfils:latest
+          imagePullPolicy: IfNotPresent
+          resources:
+            requests:
+              cpu: 100m
+              memory: 100Mi
+          env:
+            - name: GET_HOST_FROM
+              value: dns
+          ports:
+            - containerPort: 8080

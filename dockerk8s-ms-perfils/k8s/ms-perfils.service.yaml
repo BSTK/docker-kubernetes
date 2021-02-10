@@ -1,0 +1,16 @@
+apiVersion: v1
+kind: Service
+
+metadata:
+  name: ms-perfils
+  labels:
+    app: ms-perfils
+    tier: backend
+
+spec:
+  type: NodePort
+  ports:
+    - port: 8080
+  selector:
+    app: ms-perfils
+    tier: backend

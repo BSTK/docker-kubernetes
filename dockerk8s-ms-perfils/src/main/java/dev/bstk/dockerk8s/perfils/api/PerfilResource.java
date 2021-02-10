@@ -2,6 +2,7 @@ package dev.bstk.dockerk8s.perfils.api;
 
 import dev.bstk.dockerk8s.perfils.api.response.PerfilResponse;
 import dev.bstk.dockerk8s.perfils.domain.UsuarioRepository;
+import lombok.extern.slf4j.Slf4j;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -13,6 +14,7 @@ import java.util.List;
 import java.util.UUID;
 import java.util.stream.Collectors;
 
+@Slf4j
 @RestController
 @RequestMapping("/api/v1/usuarios")
 public class PerfilResource {
@@ -34,6 +36,7 @@ public class PerfilResource {
                 .map(usuario -> mapper.map(usuario, PerfilResponse.class))
                 .collect(Collectors.toList());
 
+        log.warn("Request endpoint: /usuarios");
         return ResponseEntity.ok(usuariosResponse);
     }
 
@@ -42,6 +45,7 @@ public class PerfilResource {
         final var usuario = repository.usuario(uuid);
         final var usuarioResponse = mapper.map(usuario, PerfilResponse.class);
 
+        log.warn("Request endpoint: /usuarios/\\{uuid\\}");
         return ResponseEntity.ok(usuarioResponse);
     }
 
