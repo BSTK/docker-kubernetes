@@ -1,6 +1,7 @@
 package dev.bstk.dockerk8s.msreceitas.api;
 
 import dev.bstk.dockerk8s.msreceitas.domain.ReceitaRepository;
+import lombok.extern.slf4j.Slf4j;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -12,6 +13,7 @@ import java.util.List;
 import java.util.UUID;
 import java.util.stream.Collectors;
 
+@Slf4j
 @RestController
 @RequestMapping("/api/v1/receitas")
 public class ReceitasResource {
@@ -33,6 +35,7 @@ public class ReceitasResource {
             .map(receita -> mapper.map(receita, ReceitaResponse.class))
             .collect(Collectors.toList());
 
+        log.warn("Request endpoint: /receitas");
         return ResponseEntity.ok(receitasResponse);
     }
 
@@ -41,6 +44,7 @@ public class ReceitasResource {
         final var receita = repository.receita(uuid);
         final var receitaResponse = mapper.map(receita, ReceitaResponse.class);
 
+        log.warn("Request endpoint: /receitas/{uuid}");
         return ResponseEntity.ok(receitaResponse);
     }
 }

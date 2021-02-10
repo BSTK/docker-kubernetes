@@ -2,23 +2,23 @@ apiVersion: apps/v1
 kind: Deployment
 
 metadata:
-  name: ms-perfils
+  name: ms-receitas
 
 spec:
   selector:
     matchLabels:
-      app: ms-perfils
+      app: ms-receitas
       tier: backend
 
   template:
     metadata:
       labels:
-        app: ms-perfils
+        app: ms-receitas
         tier: backend
     spec:
       containers:
-        - name: ms-perfils
-          image: bstk/k8s-ms-perfils
+        - name: ms-receitas
+          image: bstk/ms-receitas:latest
           imagePullPolicy: IfNotPresent
           resources:
             requests:
