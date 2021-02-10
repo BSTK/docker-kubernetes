@@ -45,7 +45,7 @@ public class PerfilResource {
         final var usuario = repository.usuario(uuid);
         final var usuarioResponse = mapper.map(usuario, PerfilResponse.class);
 
-        log.warn("Request endpoint: /usuarios/\\{uuid\\}");
+        log.warn("Request endpoint: /usuarios/{uuid}");
         return ResponseEntity.ok(usuarioResponse);
     }
 
