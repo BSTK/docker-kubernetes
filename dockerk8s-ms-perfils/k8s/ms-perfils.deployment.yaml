@@ -5,11 +5,11 @@ metadata:
   name: ms-perfils
 
 spec:
+  replicas: 2
   selector:
     matchLabels:
       app: ms-perfils
       tier: backend
-
   template:
     metadata:
       labels:

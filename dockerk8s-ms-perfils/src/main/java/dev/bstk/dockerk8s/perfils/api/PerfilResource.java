@@ -1,5 +1,6 @@
 package dev.bstk.dockerk8s.perfils.api;
 
+import com.fasterxml.jackson.databind.ObjectMapper;
 import dev.bstk.dockerk8s.perfils.api.response.PerfilResponse;
 import dev.bstk.dockerk8s.perfils.domain.UsuarioRepository;
 import lombok.extern.slf4j.Slf4j;
@@ -7,6 +8,7 @@ import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
